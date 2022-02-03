@@ -1,0 +1,21 @@
+.toast {
+    min-width: 200px;
+}
+
+.notification {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: #FBF8F1;
+    min-width: 200px;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    padding: 0 10px;
+    box-shadow: 0px 0px 5px #F7ECDE;
+    border: 1px solid #E9DAC1;
+}
+
+.content {
+    color: teal;
+}
