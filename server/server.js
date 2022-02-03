@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-
+const firebase = require('./firebase');
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
@@ -19,6 +19,14 @@ app.get('/api', (req, res) => {
 app.post('/post', (req, res) => {
     const a = Number(req.body.a);
     const b = Number(req.body.b);
+    const message = {
+        notification: {
+          title: 'Result : ',
+          body: `${a}+${b} = ${a+b}`
+        },
+        token: ''
+    };
+    firebase.sendMessage(message);
     res.json({result: String(a+b)})
 })
 
